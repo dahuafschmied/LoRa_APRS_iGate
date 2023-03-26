@@ -44,6 +44,7 @@ bool BeaconTask::setup(System &system) {
   _beaconMsg = std::shared_ptr<APRSMessage>(new APRSMessage());
   _beaconMsg->setSource(system.getUserConfig()->callsign);
   _beaconMsg->setDestination("APLG01");
+  _beaconMsg->setPath("TCPIP*");
 
   return true;
 }
