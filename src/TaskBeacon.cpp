@@ -24,7 +24,7 @@ void BeaconTask::pushButton() {
 bool BeaconTask::setup(System &system) {
   if (_instances++ == 0 && system.getBoardConfig()->Button.Pin != -1) {
     _userButton = OneButton(system.getBoardConfig()->Button.Pin, true, true);
-    _userButton.attachClick(pushButton);
+    _userButton.attachDoubleClick(pushButton);
     _send_update = false;
   }
 
